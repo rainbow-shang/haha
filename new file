@@ -1,0 +1,17 @@
+<%
+Random rand=new Random();
+int ranNum = (int)(Math.random()*50)+50;
+%>
+<jsp:include page="NewFileCCS.jsp"  flush="true">
+<jsp:param name="ranNum" value="<%=ranNum %>"/>
+</jsp:include>
+
+<% if (request.getParameter("ranNum") != null) {
+	String str = request.getParameter("ranNum");
+	int num  = Integer.parseInt(str);
+%> 
+<p>该数值为</p>
+<%=num%>
+<p>平方根为</p>
+<%=Math.sqrt(num)%>
+<%} %>
